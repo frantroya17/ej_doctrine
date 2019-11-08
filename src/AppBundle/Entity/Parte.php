@@ -37,13 +37,13 @@ class Parte
     private $observaciones;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Alumno")
+     * @ORM\ManyToOne(targetEntity="Alumno", inversedBy="partes")
      * @var Alumno
      */
     private $alumno;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Profesor")
+     * @ORM\ManyToOne(targetEntity="Profesor", inversedBy="partes")
      * @var Profesor
      */
     private $profesor;

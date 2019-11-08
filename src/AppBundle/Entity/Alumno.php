@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +42,20 @@ class Alumno
      * @var string
      */
     private $observaciones;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Parte", mappedBy="alumno")
+     * @var Parte[]
+     */
+    private $partes;
+
+    /**
+     * Profesor constructor.
+     */
+    public function __construct()
+    {
+        $this->partes = new ArrayCollection();
+    }
 
     /**
      * @return int
