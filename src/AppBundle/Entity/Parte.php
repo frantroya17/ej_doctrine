@@ -37,6 +37,18 @@ class Parte
     private $observaciones;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Alumno")
+     * @var Alumno
+     */
+    private $alumno;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Profesor")
+     * @var Profesor
+     */
+    private $profesor;
+
+    /**
      * @return int
      */
     public function getId()
@@ -95,6 +107,42 @@ class Parte
     public function setObservaciones($observaciones)
     {
         $this->observaciones = $observaciones;
+        return $this;
+    }
+
+    /**
+     * @return Alumno
+     */
+    public function getAlumno()
+    {
+        return $this->alumno;
+    }
+
+    /**
+     * @param Alumno $alumno
+     * @return Parte
+     */
+    public function setAlumno($alumno)
+    {
+        $this->alumno = $alumno;
+        return $this;
+    }
+
+    /**
+     * @return Profesor
+     */
+    public function getProfesor()
+    {
+        return $this->profesor;
+    }
+
+    /**
+     * @param Profesor $profesor
+     * @return Parte
+     */
+    public function setProfesor($profesor)
+    {
+        $this->profesor = $profesor;
         return $this;
     }
 }
